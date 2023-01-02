@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Londrina+Shadow&display=swap');
+/* --------- Global style */
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color:  #adff2f;
+}
+#main-container{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: center;
+}
+/* --------- Game layout with title, instructions,start button
+and color names matching color changes
+*/
+  
+
+#game-container{
+    width: 50%;
+    
+    font-size: 100%;
+    
+    border:solid 2px;
+    background-color: black;
+    border-color: red purple green orange;
+    border-width: 0.7rem;
+    text-align: center;
+    
+    
+    
+    
+    }
+    
+    
+#title{
+    font-family: 'Londrina Shadow', cursive;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: title;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    
+
+}
+/* ---title animation */
+@keyframes title {
+    0% {
+        color: red;
+    }
+    10%{
+        color:orange;
+    }
+    20% {
+        color:yellow;
+    }
+    30%{
+
+    color:green;
+}
+40%{
+    color:aqua
+}
+50%{
+    color:purple;
+}
+60% {
+    color:indigo
+}
+70%{
+    color:brown
+}
+80%{
+    color:yellowgreen
+}
+90%{
+    color: palevioletred;
+}
+    100% {
+        color: cornflowerblue;
+    }
+}
+#instructions { 
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'DynaPuff', cursive;
+    color:#00c220;
+     padding:20px;
+    
+    
+    
+    
+    
+    
+}
+#start-game-button{
+  background-color :#b30000;
+
+  border:8px double white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  font-family:'DynaPuff', cursive; 
+  color: white;
+  margin-bottom: 10px;
+  
+}
+#start-button-container{
+    display: flex;
+    justify-content: center;
+}
+#game-screen{
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#color-string{
+    color:#00520e;
+    background-color: white;
+    border-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'DynaPuff', cursive; 
+
+}
+/* --Style question area , answer input and answer button */
+
+#answer-and-button{
+    
+    display: flex;
+    justify-content: center;
+}
+#game-question{
+    color: #1f5403;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'DynaPuff', cursive;
+    
+    
+    padding:20px;
+    
+    
+    
+    
+    
+}
+#answer-box {
+      
+     
+     color:#00520e ;
+     
+     height: 40px;
+     width: 80px;
+     font-size: 1.2rem;
+     border:  red 8px double;
+     text-align: center;
+     margin-top: 7px;
+     margin-right:8px;
+     font-family:'DynaPuff', cursive; 
+   
+    
+}
+#div-answer-button{
+    
+    width: 60px;
+    height: 60px;
+    
+    text-align: center;
+    
+}
+#answer-button {
+    background-color :#7d3712;
+    color: white;
+    font-family:'DynaPuff', cursive; 
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border:double 8px orange;
+}
+/* --Style score area for
+correct answer, incorrect answer and attempts left */
+
+#score-area{
+    
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 1%;
+    
+    
+    
+
+}
+#correct{
+    font-family:'DynaPuff', cursive; 
+    color: #255224;
+    
+    
+}
+#wrong{
+    font-family:'DynaPuff', cursive; 
+    color: #882525;
+    
+    
+}
+#attempts-left {
+    
+    
+    font-family:'DynaPuff', cursive; 
+    color:#176356;
+    
+
+}
+/* --End of the game layout */
+
+#final-screen-container {height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#final-screen{
+    font-family: 'Londrina Shadow', cursive;
+    color: goldenrod;
+    animation-name: title;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    display: flex;
+    justify-content: center;
+    
+
+}
+/* --media queries */
+
+@media (max-width: 700px){
+#game-container {
+    width:80%;
+}
+}
+@media (max-width: 500px){
+    .istruzioni{
+        font-size: 13px;
+    }
+    #title{
+        font-size: 27px;
+    }
+}
+@media (max-width:440px){
+
+    
+    #score-area {
+        display: unset;
+    }
+    #contenitore-uno {
+        flex-direction: unset;
+    }
+    
+}

@@ -5,10 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Document</title>
 </head> 
 <body >
+    <div id="main-container">
+            
+            
+        
+    
+    
+        <div id="game-container">
+            <h1  id="title"> RAINDOM <i class="fa-solid fa-rainbow"></i></h1>
+            <p  id="instructions" >Click the red button to start the game.
+                <br>
+                When the game starts, the page will change color few times.
+                <br>
+                When the game will stop you will have to write how many times the color has changed.
+                <br>
+                If you give the correct answer you can move to the next level.
+                <br>
+                DON'T FORGET: Also white is a color!!
+                <br>
+                Enjoy!!
+            
+            </p>
+        
+            
+            
+            <div id="start-button-container"><button  id="start-game-button" onclick="emptyBoxGame();" >Start</button></div>
+        </div>
+           
+        
+        <span id="score-area">
+            <p class="scores" id="correct">It's right!: <span id="score">0</span></p>
+            <br>
+            <p id="attempts-left">Attempts : <span id="attempts">3</span></p>
+            <br>
+                
+            <p class="scores" id="wrong">It's wrong!:<span id="incorrect">0</span></p>
+            
+        </span>
+        
+    </div>
+    <div id="question"  ></div>
+        <div id="answer-and-button">
+        
+         <span id="answer-span"></span>
+         
+        <span id="div-answer-button"></span>
+    <div>
+        
     <script src="assets/js/script.js"></script>
+     <!--font awesome script-->
+     <script src="https://kit.fontawesome.com/40e96c6555.js" crossorigin="anonymous"></script>
 </body>
 </html>
