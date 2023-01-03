@@ -132,7 +132,7 @@ function showAnswerLevelOne(){
 
 
 function levelTwo() {
-    sendAnswer.removeEventListener("click",showAnswer);
+    sendAnswer.removeEventListener("click",showAnswerLevelOne);
     sendAnswer.addEventListener("click",showAnswerLevelTwo);
     let gameTwo =document.getElementById("game-container");
     
@@ -428,6 +428,7 @@ function increaseLevel() {
   <button id="answer-button">Go!</button></div>`;
   let clearForNewLevel=document.getElementById("answer-span");
   clearForNewLevel.innerHTML=``;
+  body.appendChild(gameFive);
   
   
   
@@ -868,7 +869,7 @@ function levelTen() {
 }
 //The last ShowAnswer function of the game
 //If the answer is correct it will:show an alert message, increment the correct answer value, 
-//display the final screen
+//display the final screen and a new game button.
 //If the answer is wrong it will:show an alert message, increment the incorrect answer value,
 //repeat the failed level for a maximum number of attempts 3.
 //When the attempts reach 0 the game will start from level 1 .
@@ -917,14 +918,38 @@ removeButton.innerHTML=``;
   
 }
 clearAnswer();}
+//When all the levels are completed it will run the game all over from level one
+//once the new game button on the final screen is clicked
+function startNewGame(){
+  let newScreen=document.getElementById("game-container");
+     newScreen.innerHTML=`<div id="game-screen"></div>`;
+     levelOne();
+}
+/**
+ * Get the current score from the DOM and icrements it by 1 
+ */
 
-function startNewGame(){}
+function incrementScore(){
+  let oldScore = parseInt(document.getElementById("score").innerText);
+  document.getElementById("score").innerText = ++oldScore;
+}
+/**
+ * Get the current tally score of incorrect answers from the DOM and icrements it by 1 
+ */
 
-function incrementScore(){}
+function incrementWrongAnswer(){
+  let oldScore = parseInt(document.getElementById("incorrect").innerText);
+  document.getElementById("incorrect").innerText = ++oldScore;
+}
+/**
+ * Get the current tally score of attempts  from the DOM and decrement it by 1 
+ * for every wrong answer
+ */
 
-function incrementWrongAnswer(){}
-
-function decrementAttempts(){}
+function decrementAttempts(){
+  let attempts=parseInt(document.getElementById("attempts").innerText);
+  document.getElementById("attempts").innerText= --attempts;
+}
 
 
 
