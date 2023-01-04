@@ -89,7 +89,7 @@ function levelTwo() {
   let colorStringTwo = ["ORANGE", "BLACK", "BROWN", "YELLOW", "WHITE"];
   let wordTwo = 0;
 
-  var index = 0;
+  let index = 0;
 
   function secondRound() {
       
@@ -101,7 +101,7 @@ function levelTwo() {
       gameTwo.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringTwo[wordTwo++]}</p></div>`;
   }
 
-  var timer = setInterval(secondRound, 1000);
+  let timer = setInterval(secondRound, 1000);
 }
 
 function showAnswerLevelTwo() {
@@ -162,11 +162,11 @@ function levelThree() {
   sendAnswer.addEventListener("click", showAnswerLevelThree);
   let gameThree = document.getElementById("game-container");
 
-  var coloursThree = ["pink", "green", "yellow", "purple", "white", "red", "aqua"];
+  let coloursThree = ["pink", "green", "yellow", "purple", "white", "red", "aqua"];
   let colorStringThree = ["PINk", "GREEN", "YELLOW", "PURPLE", "WHITE", "RED", "ACQUA"];
   let wordThree = 0;
 
-  var index = 0;
+  let index = 0;
 
   function thirdRound() {
       
@@ -178,7 +178,7 @@ function levelThree() {
       gameThree.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringThree[wordThree++]}</p></div>`;
   }
 
-  var timer = setInterval(thirdRound, 700);
+  let timer = setInterval(thirdRound, 700);
 }
 
 function showAnswerLevelThree() {
@@ -213,10 +213,10 @@ function levelFour() {
   sendAnswer.addEventListener("click", showAnswerLevelFour);
   let gameFour = document.getElementById("game-container");
 
-  var coloursFour = ["fuchsia", "tan", "tomato", "gray", "goldenrod", "orchid", "olive", "skyblue", "white"];
+  let coloursFour = ["fuchsia", "tan", "tomato", "gray", "goldenrod", "orchid", "olive", "skyblue", "white"];
   let colorStringFour = ["FUCHSIA", "TAN", "TOMATO", "GRAY", "GOLDENROD", "ORCHID", "OLIVE", "SKYBLUE", "WHITE"];
   let wordFour = 0;
-  var index = 0;
+  let  index = 0;
 
   function fourthRound() {
       
@@ -230,7 +230,7 @@ function levelFour() {
   }
 
   
-  var timer = setInterval(fourthRound, 500);
+  let timer = setInterval(fourthRound, 500);
 }
 
 
@@ -298,10 +298,10 @@ function levelFive() {
 
   sendAnswer.addEventListener("click", showAnswerLevelFive);
 
-  var coloursFive = ["fuchsia", "tan", "tomato", "fuchsia", "yellow"];
+  let coloursFive = ["fuchsia", "tan", "tomato", "fuchsia", "yellow"];
   let colorStringFive = ["FUCHSIA", "TAN", "TOMATO", "FUCHSIA", "YELLOW"];
   let wordFive = 0;
-  var index = 0;
+  let index = 0;
   
   function fifthRound() {
       
@@ -315,7 +315,7 @@ function levelFive() {
   }
 
   
-  var timer = setInterval(fifthRound, 500);
+  let  timer = setInterval(fifthRound, 500);
   let backToGame = document.getElementById("game-container");
   backToGame.innerHTML = `<div id="game-screen"></div>`;
   let advancedLevelButton = document.getElementById("div-answer-button");
@@ -363,10 +363,10 @@ function levelSix() {
   sendAnswer.addEventListener("click", showAnswerLevelSix);
   let gameSix = document.getElementById("game-container");
 
-  var coloursSix = ["darkred", "khaki", "orange", "chocolate", "darkred", "white", "pink"];
+  let coloursSix = ["darkred", "khaki", "orange", "chocolate", "darkred", "white", "pink"];
   let colorStringSix = ["DARKRED", "KHAKI", "ORANGE", "CHOCOLATE", "DARKRED", "WHITE", "PINK"];
   let wordSix = 0;
-  var index = 0;
+  let index = 0;
   
   function sixthRound() {
       
@@ -378,7 +378,7 @@ function levelSix() {
       gameSix.style.backgroundColor = coloursSix[index++];
       gameSix.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringSix[wordSix++]}</p></div>`;
   }
-  var timer = setInterval(sixthRound, 700);
+  let timer = setInterval(sixthRound, 700);
 }
 
 function showAnswerLevelSix() {
@@ -413,10 +413,10 @@ function levelSeven() {
   sendAnswer.addEventListener("click", showAnswerLevelSeven);
   let gameSeven = document.getElementById("game-container");
 
-  var coloursSeven = ["mediumpurple", "lavender", "lawngreen", "tomato", "white", "lawngreen", "maroon", "yellow", "black"];
+  let coloursSeven = ["mediumpurple", "lavender", "lawngreen", "tomato", "white", "lawngreen", "maroon", "yellow", "black"];
   let colorStringSeven = ["MEDIUMPURPLE", "LAVENDER", "LAWN-GREEN", "TOMATO", "WHITE", "LAWN-GREEN", "MAROON", "YELLOW", "BLACK"];
   let wordSeven = 0;
-  var index = 0;
+  let index = 0;
   
   function seventhRound() {
       
@@ -429,7 +429,7 @@ function levelSeven() {
   }
 
   
-  var timer = setInterval(seventhRound, 600);
+  let timer = setInterval(seventhRound, 600);
 }
 
 function showAnswerLevelSeven() {
@@ -464,10 +464,10 @@ function levelEight() {
   sendAnswer.addEventListener("click", showAnswerLevelEight);
   let gameEight = document.getElementById("game-container");
 
-  var coloursEight = ["violet", "white", "red", "white", "slategrey", "lawngreen", "white", "saddlebrown", "royalblue", "forestgreen", "white", "hotpink", "navy"];
+  let coloursEight = ["violet", "white", "red", "white", "slategrey", "lawngreen", "white", "saddlebrown", "royalblue", "forestgreen", "white", "hotpink", "navy"];
   let colorStringEight = ["VIOLET", "WHITE", "RED", "WHITE", "SLATE-GREY", "LAWN-GREEN", "WHITE", "SADDLE-BROWN", "ROYAL-BLUE", "FOREST-GREEN", "WHITE", "HOT-PINK", "NAVY"];
   let wordEight = 0;
-  var index = 0;
+  let index = 0;
   
   function eightthRound() {
       
@@ -481,7 +481,7 @@ function levelEight() {
   }
 
   
-  var timer = setInterval(eightthRound, 800);
+  let timer = setInterval(eightthRound, 800);
 }
 
 function showAnswerLevelEight() {
@@ -515,10 +515,10 @@ function levelNine() {
   sendAnswer.addEventListener("click", showAnswerLevelNine);
   let gameNine = document.getElementById("game-container");
 
-  var coloursNine = ["orange", "pink", "blue", "brown", "pink", "red", "blue", "lightseagreen", "yellow"];
+  let coloursNine = ["orange", "pink", "blue", "brown", "pink", "red", "blue", "lightseagreen", "yellow"];
   let colorStringNine = ["ORANGE", "PINK", "BLUE", "BROWN", "PINK", "RED", "BLUE", "LIGHTSEA-GREEN", "YELLOW"];
   let wordNine = 0;
-  var index = 0;
+  let index = 0;
   
   function ninethRound() {
       
@@ -532,7 +532,7 @@ function levelNine() {
   }
 
   
-  var timer = setInterval(ninethRound, 700);
+  let timer = setInterval(ninethRound, 700);
 }
 
 function showAnswerLevelNine() {
@@ -567,10 +567,10 @@ function levelTen() {
   sendAnswer.addEventListener("click", showAnswerLevelTen);
   let gameTen = document.getElementById("game-container");
 
-  var coloursTen = ["coral", "black", "pink", "yellow", "black", "white", "pink", "green", "pink", "purple", "orange", "lime", "pink", "gold"];
+  let coloursTen = ["coral", "black", "pink", "yellow", "black", "white", "pink", "green", "pink", "purple", "orange", "lime", "pink", "gold"];
   let colorStringTen = ["CORAL", "BLACK", "PINK", "YELLOW", "BLACK", "WHITE", "PINk", "GREEN", "PINK", "PURPLE", "ORANGE", "LIME", "PINK", "GOLD"];
   let wordTen = 0;
-  var index = 0;
+  let index = 0;
   
   function tenthRound() {
       
@@ -584,7 +584,7 @@ function levelTen() {
   }
 
   
-  var timer = setInterval(tenthRound, 600);
+  let timer = setInterval(tenthRound, 600);
 }
 
 function showAnswerLevelTen() {
