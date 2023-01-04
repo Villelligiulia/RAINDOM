@@ -349,7 +349,7 @@ function increaseLevel() {
   let increaseLevel = document.getElementById("game-container");
   increaseLevel.innerHTML = `<div id=game-screen">
 <p id="game-question">Too easy??<br>
-Let's make it harder then!!<br>
+Let's spice it up!!<br>
 The rule will be the same, but every time <br>
 you will see the same colour repeated<br>
 you won't have to count for that specific color !!<br>
@@ -668,7 +668,7 @@ function levelNine() {
   let gameNine = document.getElementById("game-container");
 
   var coloursNine = ["orange", "pink", "blue", "brown", "pink", "red", "blue", "lightseagreen", "yellow"];
-  let colorStringNine = ["ORANGE", "PINK", "BLUE", "BROWNT", "PINK", "RED", "BLUE", "LIGHTSEA-GREEN", "YELLOW"];
+  let colorStringNine = ["ORANGE", "PINK", "BLUE", "BROWN", "PINK", "RED", "BLUE", "LIGHTSEA-GREEN", "YELLOW"];
   let wordNine = 0;
   var index = 0;
   // Will keep track of which color to use
