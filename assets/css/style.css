@@ -50,38 +50,38 @@ body{
 
 @keyframes title {
     0% {
-        color: red;
+        color: #ff6161;
     }
     10%{
-        color:orange;
+        color:#f77408;
     }
     20% {
-        color:yellow;
+        color:#d6f202;
     }
     30%{
 
-    color:green;
+    color:#02f212;
 }
 40%{
-    color:aqua
+    color:#02caf2;
 }
 50%{
-    color:purple;
+    color:#f202ea;
 }
 60% {
-    color:indigo
+    color:#e97aff;
 }
 70%{
-    color:brown
+    color:#ff6161;
 }
 80%{
-    color:yellowgreen
+    color:#f77408;
 }
 90%{
-    color: palevioletred;
+    color: #f77408;
 }
     100% {
-        color: cornflowerblue;
+        color: #02f212;
     }
 }
 #instructions { 
@@ -241,6 +241,7 @@ body{
 @media (max-width: 700px){
 #game-container {
     width:80%;
+    
 }
 }
 @media (max-width: 500px){

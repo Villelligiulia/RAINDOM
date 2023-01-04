@@ -1,10 +1,10 @@
 # RAINDOM
-Raindom is a fully responsive JavaScript memory and concentration game. It is a ten level game, with increasing difficulty as progressing of level. 
+RAINDOM is a fully responsive JavaScript memory and concentration game. It is a ten level game, with increasing difficulty as progressing of level. 
 The main rule is very simple :
-the central square on the page, which is where the game is performing, will change color several times.
-The user will have to say how many times the color of the central square has changed.
+the central console on the page, which is where the game is performing, will change color several times.
+The user will have to say how many times the color on the central console has changed.
 The goal of this game is to entertain the user. Altough is a simple game made on a simple principle, as the level increases, it will add some challenges to mantain high  user's concentration and to make the game more intriguing and funny.
-<inserire screen shot>
+![Responsive mockup](media/raindom-responsive.jpg)
 ## Features
 ### The  Game Screen
  - Featured in the center of the page, the Game Screen is the main component of the page, as it is within it that the game will be displayed.
@@ -21,7 +21,7 @@ The goal of this game is to entertain the user. Altough is a simple game made on
   ![Game example color green](media/raindom-game-play2.jpg)
 
 ### The Game Question and Answer
-- When the level is over a question combined with an answer field and a button to answer the question, is displayed under the game screen.
+- When the level is over, a question combined with an answer field and a button to answer the question, is displayed under the game screen.
 - The purpose of the question is to highlight the main goal of the game: it asks the user how many times the color has changed.
 - The purpose of the answer field and the button is to let the user interact with the game .
 ![Game Question and Answer](media/raindom-question.jpg)
@@ -30,14 +30,14 @@ The goal of this game is to entertain the user. Altough is a simple game made on
   - it's right :(number) value :It represents the correct answers given by the user. Its value will increase for every correct answer.
   - it's wrong :(number) value :It represents the incorrect answers given by the user. It's value will increase for every incorrect answer.
   - Attempts:(number)value : It represents the possibilities the user has to give the incorrect answer. The total number of the attempts are 3 and this value will decrease for every incorrect answer given by the user.
-  When the user gives an incorrect for a specific level, the level the user  has failed will repeat, untill when the number of the attempts will reach the value of "0" and the user will have to start the game from Level 1.
-  - The purpose of the score area is for the user to keep track of his/her scores and to be able to know how many chances to fail he/she has before starting the game all over.
+  When the user gives an incorrect answer for a specific level, the level the user  has failed will repeat, untill when the number of the attempts will reach the value of "0" and the user will have to start the game from Level 1.
+  - The purpose of the score area is for the user to keep track of his/her score and to be able to know how many chances to fail he/she has before starting the game all over.
 
 ![score area](media/raindom-score-area.jpg)
 
 ### Increase Level
 If the user is able to give 4 correct answers the difficulty of the game will be increased.
-- The game screen will be replaced by new instructins, to let the user understand the  task for the  new challenge .
+- The game screen will be replaced by new instructions, to let the user understand the  task for the  new challenge .
 The purpose of increasing the game level is to maintain the attention and curiosity of the user and to make the game funnier.
 - Under the game screen with the instructions for the new challange then, a new question and a "Go" button will be displayed.
 The purpose of this section is to give the user the time to understand the new challange and decide when to start the new level.
@@ -72,6 +72,43 @@ Three unused variables
 - 71	clearAnswer
 - 7	emptyBoxGame
 - 810	startNewGame
+
+
+### Accessibility
+- I confirm that all the features are easy to read, navigate and accessible and passed through Lighthouse checks. ![Lighthouse test](media/raindom-light-house.jpg)
+
+- All the colors of different elements displayed on the page have been tested on WCAG Color Contrast Checker and all of them passed the test, including those one who could not be detected by the Lightouse test, as added in a second moment to the DOM.
+  - Below shown some examples:       
+     - Test color on "Go" button.
+![test color on go button](media/raindom-color-test-example-button2.jpg)
+- Test color on "start" and "new Game"button.
+![test color on "start" and "new game" button](media/raindom-color-test-example-button.jpg)
+- Test color on questions
+![test color on questions](media/raindom-color-test-question.jpg)
+
+
+## Deployment
+
+
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the GitHub repository, navigate to the Settings tab 
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+
+The live link can be found here - https://villelligiulia.github.io/RAINDOM/.
+
+## Testing
+- The Project was tested and worked in different browsers: Firefox, Chrome, Safari.
+- I confirm that the Project is resposive, looks good on all standard screen sizes using Devtools device toolbar.
+
+## Credits
+- Content:
+   -  Score area html code, and function incrementScore() and incremementWrongAnswer() JavaScript code where taken from Love Maths Project;
+
+
+
+
 
 
 
