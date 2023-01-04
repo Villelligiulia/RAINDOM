@@ -1,8 +1,4 @@
-/*
-Replace the div with title, instructions and button,
-with an empty div
-and runs the first level of the game
-*/
+
 
 function emptyBoxGame() {
   let gameContainer = document.getElementById("game-container");
@@ -10,16 +6,7 @@ function emptyBoxGame() {
   levelOne();
 }
 
-/*This function starts the game.
-It is the first of ten levels . 
-it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 
 function levelOne() {
   let gameContainer = document.getElementById("game-container");
@@ -29,29 +16,22 @@ function levelOne() {
   let index = 0;
 
   function change() {
-      /* Will keep track of which color to use
-Display the exact numbers of colors in the array and stops when
-the colors are over
-*/
+      
       if (index >= 3) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+      
 
       gameContainer.style.backgroundColor = colours[index++];
       gameContainer.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringOne[wordOne++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 2seconds between each color.
-  //The setTimeout will diplay the question function after 9 seconds.
+ 
   let timer = setInterval(change, 2000);
   setTimeout(question, 9000);
 }
 
-/*Under the div-container, create a question,an input for the answer 
-and a button to send the answer.
-*/
 
 function question() {
   let question = document.getElementById("question");
@@ -66,20 +46,12 @@ function question() {
 let sendAnswer = document.getElementById("div-answer-button");
 sendAnswer.addEventListener("click", showAnswerLevelOne);
 
-//Clear the input field after the answer is submitted
+
 function clearAnswer() {
   let clearAnswer = (document.getElementById("answer-box").value = "");
 }
 
-/*This function is triggered by the CLICK ME button beside the answer field
-It is the first of ten answers, one for each level.
-If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelOne() {
   let userAnswer = document.getElementById("answer-box").value;
 
@@ -106,13 +78,7 @@ function showAnswerLevelOne() {
   }
 
   clearAnswer();
-} /*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of the arrays and the timer set between one color and an other.
-*/
+} 
 
 function levelTwo() {
   sendAnswer.removeEventListener("click", showAnswerLevelOne);
@@ -126,55 +92,17 @@ function levelTwo() {
   var index = 0;
 
   function secondRound() {
-      /*
-  Display the exact numbers of colors in the array and stops when
-the colors are over
-*/
+      
       if (index >= 4) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
       gameTwo.style.backgroundColor = coloursTwo[index++];
       gameTwo.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringTwo[wordTwo++]}</p></div>`;
   }
-  // The timer sets up an interval of 1second between each color.
 
   var timer = setInterval(secondRound, 1000);
 }
-/*
-If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
-function showAnswerLevelTwo() {
-  let userAnswerTwo = document.getElementById("answer-box").value;
-
-  if (userAnswerTwo == 5) {
-      alert("WELL DONE!!");
-      incrementScore();
-      levelThree();
-  } else if (userAnswerTwo === "") {
-      alert("You have to insert a number");
-  } else {
-      alert("Try again !!");
-      incrementWrongAnswer();
-      decrementAttempts();
-      let attempts = document.getElementById("attempts");
-      if (attempts.innerText == 0) {
-          alert("Awww noo! You will have to start all over!!");
-          levelOne();
-          let newAttempts = document.getElementById("attempts");
-          newAttempts.innerHTML = `3`;
-      } else {
-          levelTwo();
-      }
-  }
-  clearAnswer();
-}
 
 function showAnswerLevelTwo() {
   let userAnswerTwo = document.getElementById("answer-box").value;
@@ -201,14 +129,33 @@ function showAnswerLevelTwo() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
+function showAnswerLevelTwo() {
+  let userAnswerTwo = document.getElementById("answer-box").value;
+
+  if (userAnswerTwo == 5) {
+      alert("WELL DONE!!");
+      incrementScore();
+      levelThree();
+  } else if (userAnswerTwo === "") {
+      alert("You have to insert a number");
+  } else {
+      alert("Try again !!");
+      incrementWrongAnswer();
+      decrementAttempts();
+      let attempts = document.getElementById("attempts");
+      if (attempts.innerText == 0) {
+          alert("Awww noo! You will have to start all over!!");
+          levelOne();
+          let newAttempts = document.getElementById("attempts");
+          newAttempts.innerHTML = `3`;
+      } else {
+          levelTwo();
+      }
+  }
+  clearAnswer();
+}
+
 
 function levelThree() {
   sendAnswer.removeEventListener("click", showAnswerLevelTwo);
@@ -220,29 +167,19 @@ function levelThree() {
   let wordThree = 0;
 
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+
   function thirdRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 6) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
       gameThree.style.backgroundColor = coloursThree[index++];
       gameThree.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringThree[wordThree++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.7 seconds between each color.
   var timer = setInterval(thirdRound, 700);
 }
-//If the answer is correct it will:show an alert message, increment the correct answer value,
-//move to the next level
-//If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-//repeat the failed level for a maximum number of attempts 3.
-//When the attempts reach 0 the game will start from level 1 .
-//If an empty input is submitted will show an alert message.
 
 function showAnswerLevelThree() {
   let userAnswerThree = document.getElementById("answer-box").value;
@@ -269,14 +206,7 @@ function showAnswerLevelThree() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 
 function levelFour() {
   sendAnswer.removeEventListener("click", showAnswerLevelThree);
@@ -287,29 +217,22 @@ function levelFour() {
   let colorStringFour = ["FUCHSIA", "TAN", "TOMATO", "GRAY", "GOLDENROD", "ORCHID", "OLIVE", "SKYBLUE", "WHITE"];
   let wordFour = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+
   function fourthRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 8) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+     
       gameFour.style.backgroundColor = coloursFour[index++];
       gameFour.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringFour[wordFour++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.5 seconds between each color.
+  
   var timer = setInterval(fourthRound, 500);
 }
-//If the answer is correct it will:show an alert message, increment the correct answer value,
-//move to the next level
-//If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-//repeat the failed level for a maximum number of attempts 3.
-//When the attempts reach 0 the game will start from level 1 .
-//If an empty input is submitted will show an alert message.
+
 
 function showAnswerLevelFour() {
   let userAnswerFour = document.getElementById("answer-box").value;
@@ -339,12 +262,7 @@ function showAnswerLevelFour() {
   }
   clearAnswer();
 }
-/*
-It displays new instructions inside the div game-container,
-a new question under the div game-container,
-a new button under the div game-container that will start
-and run the next level when clicked
-*/
+
 function increaseLevel() {
   let increaseLevel = document.getElementById("game-container");
   increaseLevel.innerHTML = `<div id=game-screen">
@@ -372,14 +290,7 @@ Have fun</p></div>`;
   let clearForNewLevel = document.getElementById("answer-span");
   clearForNewLevel.innerHTML = ``;
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 function levelFive() {
   let gameFive = document.getElementById("game-container");
 
@@ -391,21 +302,19 @@ function levelFive() {
   let colorStringFive = ["FUCHSIA", "TAN", "TOMATO", "FUCHSIA", "YELLOW"];
   let wordFive = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function fifthRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 4) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+      
       gameFive.style.backgroundColor = coloursFive[index++];
       gameFive.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringFive[wordFive++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.5seconds between each color.
+  
   var timer = setInterval(fifthRound, 500);
   let backToGame = document.getElementById("game-container");
   backToGame.innerHTML = `<div id="game-screen"></div>`;
@@ -423,14 +332,7 @@ function levelFive() {
 }
 
 function showAnswerLevelFive() {
-  /*
-If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+ 
   let userAnswerFive = document.getElementById("answer-box").value;
 
   if (userAnswerFive == 3) {
@@ -455,14 +357,7 @@ If an empty input is submitted will show an alert message.
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 function levelSix() {
   sendAnswer.removeEventListener("click", showAnswerLevelFive);
   sendAnswer.addEventListener("click", showAnswerLevelSix);
@@ -472,29 +367,20 @@ function levelSix() {
   let colorStringSix = ["DARKRED", "KHAKI", "ORANGE", "CHOCOLATE", "DARKRED", "WHITE", "PINK"];
   let wordSix = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function sixthRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 6) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+     
       gameSix.style.backgroundColor = coloursSix[index++];
       gameSix.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringSix[wordSix++]}</p></div>`;
   }
-  // The timer sets up an interval of 0.7seconds between each color.
   var timer = setInterval(sixthRound, 700);
 }
-/*If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelSix() {
   let userAnswerSix = document.getElementById("answer-box").value;
 
@@ -520,14 +406,7 @@ function showAnswerLevelSix() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 
 function levelSeven() {
   sendAnswer.removeEventListener("click", showAnswerLevelSix);
@@ -538,30 +417,21 @@ function levelSeven() {
   let colorStringSeven = ["MEDIUMPURPLE", "LAVENDER", "LAWN-GREEN", "TOMATO", "WHITE", "LAWN-GREEN", "MAROON", "YELLOW", "BLACK"];
   let wordSeven = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function seventhRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 8) {
           clearInterval(timer);
       }
-      // Set the color and strings of colors and increment the index
+      
       gameSeven.style.backgroundColor = coloursSeven[index++];
       gameSeven.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringSeven[wordSeven++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.6seconds between each color.
+  
   var timer = setInterval(seventhRound, 600);
 }
-/*
-   If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelSeven() {
   let userAnswerSeven = document.getElementById("answer-box").value;
 
@@ -587,14 +457,7 @@ function showAnswerLevelSeven() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 
 function levelEight() {
   sendAnswer.removeEventListener("click", showAnswerLevelSeven);
@@ -605,30 +468,22 @@ function levelEight() {
   let colorStringEight = ["VIOLET", "WHITE", "RED", "WHITE", "SLATE-GREY", "LAWN-GREEN", "WHITE", "SADDLE-BROWN", "ROYAL-BLUE", "FOREST-GREEN", "WHITE", "HOT-PINK", "NAVY"];
   let wordEight = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function eightthRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 12) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+      
       gameEight.style.backgroundColor = coloursEight[index++];
       gameEight.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringEight[wordEight++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.8seconds between each color.
+  
   var timer = setInterval(eightthRound, 800);
 }
-/*If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelEight() {
   let userAnswerEight = document.getElementById("answer-box").value;
 
@@ -654,14 +509,7 @@ function showAnswerLevelEight() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 function levelNine() {
   sendAnswer.removeEventListener("click", showAnswerLevelEight);
   sendAnswer.addEventListener("click", showAnswerLevelNine);
@@ -671,30 +519,22 @@ function levelNine() {
   let colorStringNine = ["ORANGE", "PINK", "BLUE", "BROWN", "PINK", "RED", "BLUE", "LIGHTSEA-GREEN", "YELLOW"];
   let wordNine = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function ninethRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 8) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+      
       gameNine.style.backgroundColor = coloursNine[index++];
       gameNine.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringNine[wordNine++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.7seconds between each color.
+  
   var timer = setInterval(ninethRound, 700);
 }
-/*If the answer is correct it will:show an alert message, increment the correct answer value, 
-move to the next level
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelNine() {
   let userAnswerNine = document.getElementById("answer-box").value;
 
@@ -720,14 +560,7 @@ function showAnswerLevelNine() {
   }
   clearAnswer();
 }
-/*it sets up an iterable array of colors that becomes
-the HTML output of the div game-container and 
-changes color accordingly.
-it also set up an iterable array of strings of colors
-which matches the color displayed in the div game-container.
-The level functions are all the same, execpt for the content of
-the arrays and the timer set between one color and an other.
-*/
+
 
 function levelTen() {
   sendAnswer.removeEventListener("click", showAnswerLevelNine);
@@ -738,32 +571,22 @@ function levelTen() {
   let colorStringTen = ["CORAL", "BLACK", "PINK", "YELLOW", "BLACK", "WHITE", "PINk", "GREEN", "PINK", "PURPLE", "ORANGE", "LIME", "PINK", "GOLD"];
   let wordTen = 0;
   var index = 0;
-  // Will keep track of which color to use
-  // If we have run out of colors, stop the timer
+  
   function tenthRound() {
-      //Display the exact numbers of colors in the array and stops when
-      //the colors are over
+      
       if (index >= 13) {
           clearInterval(timer);
       }
 
-      // Set the color and strings of colors and increment the index
+      
       gameTen.style.backgroundColor = coloursTen[index++];
       gameTen.innerHTML = `<div id="game-screen"><p id="color-string"> ${colorStringTen[wordTen++]}</p></div>`;
   }
 
-  // The timer sets up an interval of 0.6seconds between each color.
+  
   var timer = setInterval(tenthRound, 600);
 }
-/*
-The last ShowAnswer function of the game
-If the answer is correct it will:show an alert message, increment the correct answer value, 
-display the final screen and a new game button.
-If the answer is wrong it will:show an alert message, increment the incorrect answer value,
-repeat the failed level for a maximum number of attempts 3.
-When the attempts reach 0 the game will start from level 1 .
-If an empty input is submitted will show an alert message.
-*/
+
 function showAnswerLevelTen() {
   let userAnswerTen = document.getElementById("answer-box").value;
 
@@ -804,34 +627,25 @@ function showAnswerLevelTen() {
   }
   clearAnswer();
 }
-/**When all the levels are completed it will run the game all over from level one
-*once the user clicks the new game button on the final screen.
-*/
+
 function startNewGame() {
   let newScreen = document.getElementById("game-container");
   newScreen.innerHTML = `<div id="game-screen"></div>`;
   levelOne();
 }
-/**
-* Get the current score from the DOM and icrements it by 1
-*/
+
 
 function incrementScore() {
   let oldScore = parseInt(document.getElementById("score").innerText);
   document.getElementById("score").innerText = ++oldScore;
 }
-/**
-* Get the current tally score of incorrect answers from the DOM and icrements it by 1
-*/
+
 
 function incrementWrongAnswer() {
   let oldScore = parseInt(document.getElementById("incorrect").innerText);
   document.getElementById("incorrect").innerText = ++oldScore;
 }
-/**
-* Get the current tally score of attempts  from the DOM and decrement it by 1
-* for every wrong answer
-*/
+
 
 function decrementAttempts() {
   let attempts = parseInt(document.getElementById("attempts").innerText);

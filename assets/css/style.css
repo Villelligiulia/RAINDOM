@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Londrina+Shadow&display=swap');
-/* --------- Global style */
+
 * {
     border: none;
     margin: 0;
@@ -15,9 +15,7 @@ body{
     flex-wrap: wrap;
     align-content: center;
 }
-/* --------- Game layout with title, instructions,start button
-and color names matching color changes
-*/
+
   
 
 #game-container{
@@ -49,7 +47,7 @@ and color names matching color changes
     
 
 }
-/* ---title animation */
+
 @keyframes title {
     0% {
         color: red;
@@ -132,7 +130,6 @@ and color names matching color changes
     font-family:'DynaPuff', cursive; 
 
 }
-/* --Style question area , answer input and answer button */
 
 #answer-and-button{
     
@@ -187,8 +184,7 @@ and color names matching color changes
     border-radius: 50%;
     border:double 8px orange;
 }
-/* --Style score area for
-correct answer, incorrect answer and attempts left */
+
 
 #score-area{
     
@@ -221,7 +217,7 @@ correct answer, incorrect answer and attempts left */
     
 
 }
-/* --End of the game layout */
+
 
 #final-screen-container {height: 300px;
     display: flex;
@@ -240,7 +236,7 @@ correct answer, incorrect answer and attempts left */
     
 
 }
-/* --media queries */
+
 
 @media (max-width: 700px){
 #game-container {
